@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ predict }}<br>
+{% for i in predict %}
+    예측값 : {{ i.item }} &nbsp;&nbsp;
+    {% if forloop.counter >= 10 %}&nbsp;
+        <img src="{{ MEDIA_URL }}/test_image/test/{{ forloop.counter}}.jpg" width="100" height="100"><br>
+    {% else %}
+        <img src="{{ MEDIA_URL }}/test_image/test/0{{ forloop.counter}}.jpg" width="100" height="100"><br>
+    {%  endif %}
+{% endfor %}
+</body>
+</html>

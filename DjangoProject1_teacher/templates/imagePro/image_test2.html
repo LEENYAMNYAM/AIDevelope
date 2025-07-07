@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+예측값 : {{ predict.item }} &nbsp;&nbsp;
+    {% if forloop.counter >= 10 %}&nbsp;
+        <img src="{{ MEDIA_URL }}/test_image/test/{{ forloop.counter}}.jpg" width="100" height="100"><br>
+    {% else %}
+        <img src="{{ MEDIA_URL }}/test_image/test/0{{ forloop.counter}}.jpg" width="100" height="100"><br>
+    {%  endif %}
+</body>
+</html>
